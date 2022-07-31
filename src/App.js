@@ -30,6 +30,9 @@ import Elections from "./pages/Elections/Elections";
 import ElectionCandidates from "./pages/Elections/ElectionCandidates";
 import Opportunities from "./pages/Opportunities/Opportunities";
 import OpportunityPage from "./pages/Opportunities/OpportunityPage";
+import Certificates from "./components/CertificateGenerator/Certificates";
+import Admin from "./components/CertificateGenerator/Admin";
+
 
 function App() {
   useEffect(() => {
@@ -46,6 +49,8 @@ function App() {
           <Route exact path="/booking" component={Booking} />
           <Route exact path="/contacts" component={Contacts} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/admin" component={Admin} />
+          <Route exact path="/certif-gen" component={Certificates} />
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/results/gc" component={Results} />
           <Route exact path="/results/inter_iit" component={Results} />
