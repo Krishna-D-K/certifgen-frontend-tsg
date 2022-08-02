@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './carouselCss.css';
 import './certif.css';
 
 import CertiTemplate from './CertiTemplate.json'
@@ -20,23 +21,30 @@ function ControlledCarousel() {
 
     return (
         <>
-            <Carousel activeIndex={index} onSelect={handleSelect} interval={null}>
+            <div style={{height: 'auto', width: '40vw'}}>
+            <Carousel activeIndex={index} onSelect={handleSelect} interval={null} fade= {true} touch={true}>
                 {CertiTemplate.Templates.map(template => (
                     <Carousel.Item key={template.key}>
                         <img
-                            className="d-block w-100"
+                            className="d-block w-200"
                             src={template.src}
                             alt={template.alt}
+                            style={{ borderRadius:'1rem'}}
                         />
                         <Carousel.Caption>
                             <h3>{template.alt}</h3>
-                            <button className='btn btn-primary' id={template.id} onClick={handleTemplate}>Select</button>
+                            <button className='btn btn-primary' 
+                            id={template.id} 
+                            onClick={handleTemplate} >Select</button>
                         </Carousel.Caption>
                     </Carousel.Item>
                 ))}
             </Carousel>
-            <p className='text-center d-block btn btn-success m-auto'>Certificate {parseInt(selectedTemplate) + 1} selected!</p>
-            <ExcelPreview id={selectedTemplate} />
+            </div>
+            <p className='text-center d-block btn btn-success m-auto'
+            style={{background:'transparent', color:'yellow' ,border:'none'}}>Certificate {parseInt(selectedTemplate) + 1} selected!</p>
+            <div style={{height: 'auto', width: '40vw'}}><ExcelPreview id={selectedTemplate} /></div> 
+
         </>
     );
 }

@@ -38,6 +38,8 @@ function App() {
   useEffect(() => {
     AOS.init();
   }, []);
+  document.body.style = 'background: black;';
+
   return (
     <Router>
       <ScrollToTop>

@@ -1,0 +1,11 @@
+.btn:before, .btn:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: transparent;
+}
+.text-center{
+    display: none;
+}
